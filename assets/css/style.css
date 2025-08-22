@@ -82,3 +82,13 @@ td {
   text-shadow: 0 0 4px rgba(0, 0, 0, .35);
   /* 背景が明るい時の視認性アップ用(任意) */
 }
+
+.header-image {
+  text-align: center;
+}
+
+.header-image img {
+  max-width: 80%;     /* 幅を画面サイズ */
+  height: auto;       /* アスペクト比 */
+  border-radius: 8px; /* 角を丸くする */
+}
