@@ -45,7 +45,7 @@ main {
   box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
 }
 
-.hero {
+.index {
   background: linear-gradient(135deg, var(--green-dark), var(--green));
   color: #fff;
   padding: 3rem 1rem;
@@ -76,7 +76,7 @@ td {
   text-align: left;
 }
 
-.hero h2 {
+.index h2 {
   color: #ffffff;
   /* 好きな色に変更 (#fff = 白など) */
   text-shadow: 0 0 4px rgba(0, 0, 0, .35);

@@ -8,12 +8,3 @@ sections.forEach(function(sec) {
             if (el) el.innerHTML = html;
         });
 });
-
-// アンカーリンクのスクロール処理
-document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        var target = document.querySelector(anchor.getAttribute('href'));
-        if (target) target.scrollIntoView({ behavior: 'smooth' });
-    });
-});
