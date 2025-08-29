@@ -4,7 +4,7 @@ const lang = document.body.dataset.lang; // "jp" か "en"
 const sections = ["hero", "program", "cfp", "about"];
 
 sections.forEach(function(sec) {
-    fetch(`../../${lang}/${sec}.html`)  // lang に応じてフォルダ切り替え
+    fetch(`/homepage/${lang}/${sec}.html`)  // lang に応じてフォルダ切り替え
         .then(function(res) { return res.text(); })
         .then(function(html) {
             var el = document.getElementById(sec);
