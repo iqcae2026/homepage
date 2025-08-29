@@ -2,19 +2,20 @@
   
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Home | iQCAE 2026</title>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> 
+<title>Home | iQCAE 2026</title>
 <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
-<body>
+<body data-lang="jp">
 
 <header class="site-header">
-  <h1><a href="./">iQCAE 2026 Workshop</a></h1>
+  <h1><a href="./">iQCAE 2026 Workshop</a></h1>
   <nav>
-    <a href="./index.html">Home</a>
-    <a href="./program.html">Program</a>
-    <a href="./cfp.html">CFP</a>
-    <a href="./about.html">About</a>
+    <a href="#hero">Home</a>
+    <a href="#program">Program</a>
+    <a href="#cfp">CFP</a>
+    <a href="#about">About</a>
     <a href="../en/index.html">en/jp</a>
   </nav>
 </header>
@@ -24,7 +25,7 @@
   <h2>産業における量子CAE応用 (iQCAE 2026)</h2>
   <p>SCA/HPCAsia 2026 併設ワークショップ — 日本・大阪 — 2026年1月26日（または29日、後日発表予定）</p>
   </section>
-  <h2>Welcome</h2>
+  <h2 class="mt-4">Welcome</h2>
   <p>
     iQCAEワークショップは、学術界と産業界が一堂に会し、CAEシミュレーションにおける量子コンピュータ応用の可能性について議論する場です。<br>
     本ワークショップの目的は、従来のCAEが直面する課題について意見を交換し、解決策を模索し、量子コンピュータがそれらの限界克服にどのように貢献できるかを検討することにあります。
@@ -40,7 +41,12 @@
     本イベントを開催できることを大変嬉しく思っております。皆さまのご参加を心よりお待ちしております。
   </p>
 
-  <p><a href="cfp.html">発表募集の詳細はこちら →</a></p>
+  <p class="mb-16"><a href="cfp.html">発表募集の詳細はこちら →</a></p>
+
+  <div id="program" class="mb-16"></div>
+  <div id="cfp" class="mb-16"></div>
+  <div id="about" class="mb-16"></div>
+
 </main>
 
 <footer class="site-footer">
@@ -48,3 +54,5 @@
 </footer>
 
 </body></html>
+
+<script src="../assets/js/main.js" defer></script>
