@@ -9,54 +9,40 @@
     <link rel="stylesheet" href="../assets/css/style.css">
   </head>
 
-  <body data-lang="jp">
+  <body data-lang="jp" class="bg-gray-50">
 
-  <header class="site-header">
-    <h1><a href="./">iQCAE 2026 Workshop</a></h1>
-    <nav>
-      <a href="#index">Home</a>
-      <a href="#program">Program</a>
-      <a href="#cfp">CFP</a>
-      <a href="#about">About</a>
-      <a href="../en/index.html">en/jp</a>
+  <header class="flex flex-col md:flex-row items-center justify-between font-serif p-4 bg-white/70 backdrop-blur-md shadow-md md:sticky md:top-0 md:z-50">
+    <!-- 左側 -->
+    <h1 class="text-sm md:text-xl mb-2 md:mb-0 md:ml-4">
+      <a href="./">iQCAE 2026 Workshop</a>
+    </h1>
+
+    <!-- 中央 -->
+    <nav class="w-full md:w-auto flex flex-col md:flex-row items-center text-xs md:text-base">
+      <a href="#hero" class="py-1 md:py-0 md:mr-8">Home</a>
+      <a href="#program" class="py-1 md:py-0 md:mx-8">Program</a>
+      <a href="#cfp" class="py-1 md:py-0 md:mx-8">CFP</a>
+      <a href="#about" class="py-1 md:py-0 md:mx-8">About</a>
     </nav>
+
+    <!-- 右側 -->
+    <div class="mt-2 md:mt-0 md:mr-8">
+      <a href="../en/index.html">en / jp</a>
+    </div>
   </header>
 
-  <main>
-
-    <section class="index">
-      <h2>産業における量子CAE応用 (iQCAE 2026)</h2>
-      <p>SCA/HPCAsia 2026 併設ワークショップ — 日本・大阪 — 2026年1月26日（または29日、後日発表予定）</p>
-    </section>
-
-    <h2 class="mt-4">Welcome</h2>
-
-    <p>
-      iQCAEワークショップは、学術界と産業界が一堂に会し、CAEシミュレーションにおける量子コンピュータ応用の可能性について議論する場です。<br>
-      本ワークショップの目的は、従来のCAEが直面する課題について意見を交換し、解決策を模索し、量子コンピュータがそれらの限界克服にどのように貢献できるかを検討することにあります。
-    </p>
-
-    <p>ワークショップは次の2部構成で行われます:</p>
-
-    <ul>
-      <li>学術界および産業界の著名なリーダーによる未来展望の共有</li>
-      <li>若手研究者による最新の研究成果の発表</li>
-    </ul>
-
-    <p>
-      本イベントを開催できることを大変嬉しく思っております。皆さまのご参加を心よりお待ちしております。
-    </p>
-
-    <p class="mb-16"><a href="cfp.html">発表募集の詳細はこちら →</a></p>
-
-    <div id="program" class="mb-16"></div>
-    <div id="cfp" class="mb-16"></div>
-    <div id="about" class="mb-16"></div>
+  <main class="max-w-3xl mx-auto px-4">
+    
+    <div id="hero" class="mb-16 border border-red-500"></div>
+    <div id="overview" class="mb-16 border border-red-500"></div>
+    <div id="program" class="mb-16 border border-red-500"></div>
+    <div id="cfp" class="mb-16 border border-red-500"></div>
+    <div id="about" class="mb-16 border border-red-500"></div>
 
   </main>
 
   <footer class="site-footer">
-    © 2025 iQCAE Workshop — Powered by GitHub Pages
+    © 2025 iQCAE Workshop — Powered by GitHub Pages
   </footer>
 
   </body>
