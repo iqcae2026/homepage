@@ -1,4 +1,4 @@
-const sections = ["header", "hero", "overview", "program", "cfp", "about"];
+const sections = ["header", "hero", "overview", "program", "about"];
 
 sections.forEach(function(sec) {
     fetch(`./component/${sec}.html`)
