@@ -19,10 +19,9 @@ jobs:
 
             - name: Prepare preview directory
               run: |
+                  rm -rf preview
                   mkdir -p preview/pr-${{ github.event.number }}
-                  cp -r ./* preview/pr-${{ github.event.number }}/
-                  rm -rf preview/pr-${{ github.event.number }}/.git
-                  rm -rf preview/pr-${{ github.event.number }}/.github
+                  rsync -av --exclude="preview" --exclude=".git" --exclude=".github" ./ preview/pr-${{ github.event.number }}/
                   rm -f preview/pr-${{ github.event.number }}/_config.yml
                   rm -f preview/pr-${{ github.event.number }}/google2da76cd1e3f3f164.html
 
