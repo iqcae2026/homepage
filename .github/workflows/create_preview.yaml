@@ -1,0 +1,41 @@
+name: Deploy Preview
+
+on:
+    pull_request:
+        branches: [main]
+        types: [opened, synchronize, reopened] #PRの作成、更新、再オープンがトリガー
+
+permissions:
+    contents: write
+    pull-requests: write
+
+jobs:
+    deploy-preview:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Prepare preview directory
+              run: |
+                  mkdir -p preview/pr-${{ github.event.number }}
+                  cp -r ./* preview/pr-${{ github.event.number }}/
+                  rm -rf preview/pr-${{ github.event.number }}/.git
+                  rm -rf preview/pr-${{ github.event.number }}/.github
+                  rm -f preview/pr-${{ github.event.number }}/_config.yml
+                  rm -f preview/pr-${{ github.event.number }}/google2da76cd1e3f3f164.html
+
+            - name: Deploy to GitHub Pages
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  publish_dir: ./preview
+                  keep_files: true
+
+            - name: Comment Preview URL
+              uses: thollander/actions-comment-pull-request@v2
+              with:
+                  message: |
+                      Preview ready.
+                      https://iqcae2026.github.io/homepage/preview/pr-${{ github.event.number }}/

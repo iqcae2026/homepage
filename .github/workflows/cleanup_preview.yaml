@@ -1,0 +1,34 @@
+name: Cleanup Preview
+
+on:
+    pull_request:
+        types: [closed] # PR が Close、Merge されたときに実行
+
+permissions:
+    contents: write
+
+jobs:
+    cleanup:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout gh-pages branch
+              uses: actions/checkout@v4
+              with:
+                  ref: gh-pages # GitHub Pages が使うブランチを指定
+                  fetch-depth: 0
+
+            - name: Remove preview directory
+              run: |
+                  echo "Removing preview folder preview/pr-${{ github.event.number }}"
+                  rm -rf preview/pr-${{ github.event.number }} || true
+
+            - name: Commit and push changes
+              run: |
+                  git config user.name 'github-actions'
+                  git config user.email 'github-actions@github.com'
+
+                  git add -A
+                  git commit -m "Cleanup preview for PR #${{ github.event.number }}" || echo "Nothing to commit"
+
+                  git push origin gh-pages
