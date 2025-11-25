@@ -8,15 +8,18 @@ const getBasePath = () => {
 };
 
 const basePath = getBasePath();
-const lang = document.body.dataset.lang; // "jp" か "en"
-const sections = ["program", "cfp", "about"];
+const lang = document.body.dataset.lang || 'en';
+const sections = ["header", "hero", "overview", "program", "about"];
 
 sections.forEach(function (sec) {
-    fetch(`${basePath}/${lang}/${sec}.html`)
+    fetch(`${basePath}/${lang}/component/${sec}.html`)
         .then(function (res) { return res.text(); })
         .then(function (html) {
             var el = document.getElementById(sec);
             if (el) el.innerHTML = html;
+        })
+        .catch(function (error) {
+            console.error(`Failed to load ${sec}.html:`, error);
         });
 });
 
