@@ -30,6 +30,7 @@ jobs:
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
                   publish_dir: ./preview
+                  destination_dir: preview
                   keep_files: true
 
             - name: Comment Preview URL
